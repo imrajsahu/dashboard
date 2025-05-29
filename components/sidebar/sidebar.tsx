@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { navigationItems } from "@/lib/data";
 import { SidebarItem } from "./sidebar-item";
 import { cn } from "@/lib/utils";
-import { ChevronLeft, ChevronRight, LayoutDashboard, Building2 } from "lucide-react";
+import { Square, LayoutDashboard, Building2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -47,7 +47,7 @@ export function Sidebar({ className }: SidebarProps) {
             className="h-8 w-8" 
             onClick={() => setCollapsed(!collapsed)}
           >
-            {collapsed ? <ChevronRight className="h-4 w-4" /> : <ChevronLeft className="h-4 w-4" />}
+            <Square className="h-4 w-4" />
           </Button>
         </div>
       </div>
