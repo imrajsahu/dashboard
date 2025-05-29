@@ -4,10 +4,11 @@ import React, { useState } from "react";
 import { navigationItems } from "@/lib/data";
 import { SidebarItem } from "./sidebar-item";
 import { cn } from "@/lib/utils";
-import { ChevronLeft, ChevronRight, LayoutDashboard } from "lucide-react";
+import { ChevronLeft, ChevronRight, LayoutDashboard, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 interface SidebarProps {
   className?: string;
@@ -25,22 +26,38 @@ export function Sidebar({ className }: SidebarProps) {
       )}
     >
       <div className="flex h-16 items-center px-2 sm:px-4">
-        <Button 
-          variant="ghost" 
-          size="icon"
-          className="h-8 w-8" 
-          onClick={() => setCollapsed(!collapsed)}
-        >
-          {collapsed ? <ChevronRight className="h-4 w-4" /> : <ChevronLeft className="h-4 w-4" />}
-        </Button>
-        {!collapsed && (
-          <div className="ml-2 flex items-center gap-2">
-            <LayoutDashboard className="h-5 w-5" />
-            <h1 className="text-lg font-bold">Dash<span className="text-primary">UI</span></h1>
-          </div>
-        )}
+        <div className="flex w-full items-center justify-between">
+          {!collapsed && (
+            <div className="flex items-center gap-2">
+              <LayoutDashboard className="h-5 w-5" />
+              <h1 className="text-lg font-bold">Dash<span className="text-primary">UI</span></h1>
+            </div>
+          )}
+          <Button 
+            variant="ghost" 
+            size="icon"
+            className="h-8 w-8" 
+            onClick={() => setCollapsed(!collapsed)}
+          >
+            {collapsed ? <ChevronRight className="h-4 w-4" /> : <ChevronLeft className="h-4 w-4" />}
+          </Button>
+        </div>
       </div>
       <Separator />
+      
+      {/* Onboarding Section */}
+      <div className="p-4">
+        <div className="rounded-lg bg-primary/10 p-4">
+          <h3 className="text-sm font-medium">Welcome to DashUI!</h3>
+          <p className="mt-1 text-xs text-muted-foreground">Complete your profile to get started</p>
+          <div className="mt-3">
+            <Button size="sm" className="w-full">Complete Setup</Button>
+          </div>
+        </div>
+      </div>
+      <Separator />
+      
+      {/* Navigation Items */}
       <ScrollArea className="flex-1 py-2 overflow-y-auto">
         <div className="space-y-1 px-2">
           {navigationItems.map((item) => (
@@ -53,9 +70,11 @@ export function Sidebar({ className }: SidebarProps) {
         </div>
       </ScrollArea>
       <Separator />
+      
+      {/* Footer with Profile */}
       <div className={cn(
-        "flex h-14 items-center",
-        collapsed ? "justify-center px-2" : "px-4"
+        "flex h-14 items-center justify-between",
+        collapsed ? "px-2" : "px-4"
       )}>
         {collapsed ? (
           <Button variant="ghost\" className="p-2\" onClick={() => setCollapsed(!collapsed)}>
@@ -67,6 +86,7 @@ export function Sidebar({ className }: SidebarProps) {
           </Button>
         ) : (
           <div className="flex items-center gap-3">
+            <Button variant="outline" size="icon" className="h-8 w-8">
             <img 
               src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=150"
               alt="User"
@@ -76,8 +96,10 @@ export function Sidebar({ className }: SidebarProps) {
               <span className="text-sm font-medium">Sophie A.</span>
               <span className="text-xs text-muted-foreground">Product Manager</span>
             </div>
+            </Button>
           </div>
         )}
+        <ThemeToggle />
       </div>
     </aside>
   );
