@@ -66,25 +66,25 @@ export const dashboardStats: DashboardStat[] = [
     title: 'Total Revenue',
     value: '$45,231.89',
     change: 20.1,
-    icon: 'dollar-sign',
+    icon: 'CurrencyDollarIcon',
   },
   {
     title: 'New Customers',
     value: 3891,
     change: 10.5,
-    icon: 'user-plus',
+    icon: 'UserPlusIcon',
   },
   {
     title: 'Active Projects',
     value: 42,
     change: -5.2,
-    icon: 'briefcase',
+    icon: 'BriefcaseIcon',
   },
   {
     title: 'Satisfaction',
     value: '95%',
     change: 2.3,
-    icon: 'smile',
+    icon: 'FaceSmileIcon',
   },
 ];
 

@@ -2,13 +2,12 @@
 
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { ChevronDownIcon } from "@heroicons/react/24/outline";
+import * as Icons from "@heroicons/react/24/outline";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { NavigationItem } from "@/lib/types";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { useState } from "react";
-import * as Icons from "@heroicons/react/24/outline";
 
 interface SidebarItemProps {
   item: NavigationItem;
@@ -38,11 +37,11 @@ export function SidebarItem({ item, collapsed }: SidebarItemProps) {
               collapsed && "justify-center px-0"
             )}
           >
-            <IconComponent size={20} />
+            <IconComponent className="h-5 w-5" />
             {!collapsed && <span>{item.title}</span>}
             {!collapsed && (
-              <ChevronDownIcon
-                size={16}
+              <Icons.ChevronDownIcon
+                className="h-4 w-4"
                 className={cn("ml-auto transition-transform", open && "rotate-180")}
               />
             )}
@@ -51,7 +50,7 @@ export function SidebarItem({ item, collapsed }: SidebarItemProps) {
         <CollapsibleContent className="ml-4 mt-1">
           {!collapsed &&
             item.submenu.map((subItem) => {
-              const SubIconComponent = (Icons as Record<string, LucideIcon>)[subItem.icon] || Icons.CircleStackIcon;
+              const SubIconComponent = (Icons as any)[subItem.icon] || Icons.CircleStackIcon;
               return (
                 <Link
                   key={subItem.href}
@@ -65,7 +64,7 @@ export function SidebarItem({ item, collapsed }: SidebarItemProps) {
                       subItem.href === pathname && "bg-muted"
                     )}
                   >
-                    <SubIconComponent size={16} />
+                    <SubIconComponent className="h-4 w-4" />
                     <span>{subItem.title}</span>
                   </Button>
                 </Link>
@@ -93,7 +92,7 @@ export function SidebarItem({ item, collapsed }: SidebarItemProps) {
           isActive && "bg-muted"
         )}
       >
-        <IconComponent size={20} />
+        <IconComponent className="h-5 w-5" />
         {!collapsed && <span>{item.title}</span>}
       </Button>
     </Link>
