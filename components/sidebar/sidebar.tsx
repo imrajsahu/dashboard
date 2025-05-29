@@ -1,5 +1,7 @@
 "use client";
 
+"use client";
+
 import React, { useState } from "react";
 import { navigationItems } from "@/lib/data";
 import { SidebarItem } from "./sidebar-item";
