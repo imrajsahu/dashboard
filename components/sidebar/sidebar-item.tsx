@@ -51,7 +51,7 @@ export function SidebarItem({ item, collapsed }: SidebarItemProps) {
         <CollapsibleContent className="ml-4 mt-1">
           {!collapsed &&
             item.submenu.map((subItem) => {
-              const SubIconComponent = (Icons as Record<string, LucideIcon>)[subItem.icon] || Icons.Circle;
+              const SubIconComponent = (Icons as Record<string, LucideIcon>)[subItem.icon] || Icons.CircleStackIcon;
               return (
                 <Link
                   key={subItem.href}
