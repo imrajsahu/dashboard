@@ -1,7 +1,5 @@
 "use client";
 
-"use client";
-
 import React, { useState } from "react";
 import { navigationItems } from "@/lib/data";
 import { SidebarItem } from "./sidebar-item";
@@ -113,7 +111,7 @@ export function Sidebar({ className }: SidebarProps) {
         collapsed ? "px-2" : "px-4"
       )}>
         {collapsed ? ( 
-          <Button variant="ghost\" className=\"p-2\" onClick={() => setCollapsed(!collapsed)}>
+          <Button variant="ghost" className="p-2" onClick={() => setCollapsed(!collapsed)}>
             <img 
               src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=150"
               alt="User"
