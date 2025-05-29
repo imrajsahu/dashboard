@@ -77,7 +77,7 @@ export function Sidebar({ className }: SidebarProps) {
         collapsed ? "px-2" : "px-4"
       )}>
         {collapsed ? (
-          <Button variant="ghost\" className=\"p-2\" onClick={() => setCollapsed(!collapsed)}>
+          <Button variant="ghost" className="p-2" onClick={() => setCollapsed(!collapsed)}>
             <img 
               src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=150"
               alt="User"
@@ -87,16 +87,16 @@ export function Sidebar({ className }: SidebarProps) {
         ) : (
           <div className="flex items-center gap-3">
             <Button variant="outline" size="icon" className="h-8 w-8">
-            <img 
-              src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=150"
-              alt="User"
-              className="h-8 w-8 rounded-full"
-            />
+              <img 
+                src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=150"
+                alt="User"
+                className="h-8 w-8 rounded-full"
+              />
+            </Button>
             <div className="flex flex-col">
               <span className="text-sm font-medium">Sophie A.</span>
               <span className="text-xs text-muted-foreground">Product Manager</span>
             </div>
-            </Button>
           </div>
         )}
         <ThemeToggle />
