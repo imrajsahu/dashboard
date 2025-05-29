@@ -2,13 +2,13 @@
 
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { DivideIcon as LucideIcon } from "lucide-react";
+import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { NavigationItem } from "@/lib/types";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { useState } from "react";
-import * as Icons from "lucide-react";
+import * as Icons from "@heroicons/react/24/outline";
 
 interface SidebarItemProps {
   item: NavigationItem;
@@ -19,8 +19,8 @@ export function SidebarItem({ item, collapsed }: SidebarItemProps) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const isActive = item.href === pathname || pathname.startsWith(item.href);
-  
-  const IconComponent = (Icons as Record<string, LucideIcon>)[item.icon] || Icons.Circle;
+
+  const IconComponent = (Icons as any)[item.icon] || Icons.CircleStackIcon;
   
   if (item.submenu) {
     return (
@@ -41,7 +41,7 @@ export function SidebarItem({ item, collapsed }: SidebarItemProps) {
             <IconComponent size={20} />
             {!collapsed && <span>{item.title}</span>}
             {!collapsed && (
-              <Icons.ChevronDown
+              <ChevronDownIcon
                 size={16}
                 className={cn("ml-auto transition-transform", open && "rotate-180")}
               />

@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { navigationItems } from "@/lib/data";
 import { SidebarItem } from "./sidebar-item";
 import { cn } from "@/lib/utils";
-import { Square, LayoutDashboard, Building2 } from "lucide-react";
+import { Squares2X2Icon, BuildingOffice2Icon } from "@heroicons/react/24/outline";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -37,7 +37,7 @@ export function Sidebar({ className }: SidebarProps) {
         <div className="flex w-full items-center justify-between">
           {!collapsed && (
             <div className="flex items-center gap-2">
-              <LayoutDashboard className="h-5 w-5" />
+              <Squares2X2Icon className="h-5 w-5" />
               <h1 className="text-lg font-bold">Dash<span className="text-primary">UI</span></h1>
             </div>
           )}
@@ -47,7 +47,7 @@ export function Sidebar({ className }: SidebarProps) {
             className="h-8 w-8" 
             onClick={() => setCollapsed(!collapsed)}
           >
-            <Square className="h-4 w-4" />
+            <Squares2X2Icon className="h-4 w-4" />
           </Button>
         </div>
       </div>
@@ -60,7 +60,7 @@ export function Sidebar({ className }: SidebarProps) {
             <Select value={workspace} onValueChange={setWorkspace}>
               <SelectTrigger>
                 <div className="flex items-center gap-2">
-                  <Building2 className="h-4 w-4" />
+                  <BuildingOffice2Icon className="h-4 w-4" />
                   <SelectValue placeholder="Select workspace" />
                 </div>
               </SelectTrigger>
