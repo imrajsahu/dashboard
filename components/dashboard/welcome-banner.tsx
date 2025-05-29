@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { userData } from "@/lib/data";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import { ArrowRight, X } from "lucide-react";
+import { ArrowRightIcon, XMarkIcon } from "@heroicons/react/24/outline";
 
 export function WelcomeBanner() {
   const [dismissed, setDismissed] = useState(false);
@@ -25,7 +25,7 @@ export function WelcomeBanner() {
               className="h-8 w-8 rounded-full" 
               onClick={() => setDismissed(true)}
             >
-              <X className="h-4 w-4" />
+              <XMarkIcon className="h-4 w-4" />
               <span className="sr-only">Dismiss</span>
             </Button>
           </div>
@@ -35,7 +35,7 @@ export function WelcomeBanner() {
           <div className="flex flex-wrap gap-2 pt-2">
             <Button className="gap-2 group">
               Take a quick tour
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              <ArrowRightIcon className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>
             <Button variant="outline">View what's new</Button>
           </div>

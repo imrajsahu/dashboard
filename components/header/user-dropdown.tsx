@@ -10,7 +10,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { userData } from "@/lib/data";
-import { LogOut, Settings, User } from "lucide-react";
+import { ArrowRightOnRectangleIcon, Cog6ToothIcon, UserIcon } from "@heroicons/react/24/outline";
 import { Button } from "@/components/ui/button";
 
 export function UserDropdown() {
@@ -33,17 +33,17 @@ export function UserDropdown() {
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           <DropdownMenuItem>
-            <User className="mr-2 h-4 w-4" />
+            <UserIcon className="mr-2 h-4 w-4" />
             <span>Profile</span>
           </DropdownMenuItem>
           <DropdownMenuItem>
-            <Settings className="mr-2 h-4 w-4" />
+            <Cog6ToothIcon className="mr-2 h-4 w-4" />
             <span>Settings</span>
           </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuItem className="text-destructive focus:text-destructive">
-          <LogOut className="mr-2 h-4 w-4" />
+          <ArrowRightOnRectangleIcon className="mr-2 h-4 w-4" />
           <span>Log out</span>
         </DropdownMenuItem>
       </DropdownMenuContent>

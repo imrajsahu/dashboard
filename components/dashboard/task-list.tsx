@@ -13,7 +13,7 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle2, Circle, Clock } from "lucide-react";
+import { CheckCircleIcon, CircleIcon, ClockIcon } from "@heroicons/react/24/outline";
 
 export function TaskList() {
   const [taskItems, setTaskItems] = useState<TaskItem[]>(tasks);
@@ -39,11 +39,10 @@ export function TaskList() {
   const statusIcon = (status: string) => {
     switch (status) {
       case "completed":
-        return <CheckCircle2 className="h-4 w-4 text-green-500" />;
+        return <CheckCircleIcon className="h-4 w-4 text-green-500" />;
       case "in-progress":
-        return <Clock className="h-4 w-4 text-yellow-500" />;
+        return <ClockIcon className="h-4 w-4 text-yellow-500" />;
       default:
-        return <Circle className="h-4 w-4 text-muted-foreground" />;
     }
   };
 

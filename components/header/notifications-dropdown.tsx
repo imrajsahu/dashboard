@@ -1,6 +1,6 @@
 "use client";
 
-import { Bell } from "lucide-react";
+import { BellIcon } from "@heroicons/react/24/outline";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -42,7 +42,7 @@ export function NotificationsDropdown() {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" size="icon" className="relative h-9 w-9 rounded-full">
-          <Bell className="h-[1.2rem] w-[1.2rem]" />
+          <BellIcon className="h-[1.2rem] w-[1.2rem]" />
           {unreadCount > 0 && (
             <span className="absolute -right-0.5 -top-0.5 flex h-5 min-w-[1.25rem] items-center justify-center rounded-full bg-destructive px-1 text-xs font-medium text-white">
               {unreadCount}

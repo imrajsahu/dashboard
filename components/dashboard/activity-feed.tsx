@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { activityData } from "@/lib/data";
-import { Check, Clock, XCircle } from "lucide-react";
+import { CheckIcon, ClockIcon, XCircleIcon } from "@heroicons/react/24/outline";
 import { Badge } from "@/components/ui/badge";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
@@ -29,11 +29,11 @@ export function ActivityFeed() {
                 <div key={activity.id} className="flex gap-4">
                   <div className="relative z-10 flex h-5 w-5 items-center justify-center rounded-full border border-muted bg-background">
                     {activity.status === "completed" ? (
-                      <Check className="h-3 w-3 text-green-500" />
+                      <CheckIcon className="h-3 w-3 text-green-500" />
                     ) : activity.status === "failed" ? (
-                      <XCircle className="h-3 w-3 text-red-500" />
+                      <XCircleIcon className="h-3 w-3 text-red-500" />
                     ) : activity.status === "pending" ? (
-                      <Clock className="h-3 w-3 text-yellow-500" />
+                      <ClockIcon className="h-3 w-3 text-yellow-500" />
                     ) : (
                       <div className="h-2 w-2 rounded-full bg-muted-foreground" />
                     )}

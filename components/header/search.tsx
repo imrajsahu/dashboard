@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { CommandDialog, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
 import { DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { Search as SearchIcon } from "lucide-react";
+import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import { useEffect, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 
@@ -72,7 +72,7 @@ export function Search() {
         )}
         onClick={() => setOpen(true)}
       >
-        <SearchIcon className="h-4 w-4 xl:mr-2" aria-hidden="true" />
+        <MagnifyingGlassIcon className="h-4 w-4 xl:mr-2" aria-hidden="true" />
         <span className="hidden xl:inline-flex">Search...</span>
         <span className="sr-only">Search</span>
         <kbd className="pointer-events-none absolute right-1.5 top-2 hidden h-6 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-xs font-medium opacity-100 xl:flex">
